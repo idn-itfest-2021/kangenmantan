@@ -1,0 +1,130 @@
+@import 'main.css';
+
+.container {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.container .content {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+}
+.container .content h2 {
+    color: var(--black);
+    width: 60%;
+    margin-bottom: 48px;
+}
+
+.container .content img {
+    width: 50%;
+}
+
+.container .content p {
+    margin-top: 16px;
+    color: var(--desc);
+    font-size: 18px;
+}
+.container .content a {
+    color: white;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin-top: 24px;
+    background-color: var(--green);
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .container .content {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .container .content h2 {
+        color: var(--black);
+        width: 80%;
+        font-size: 20px;
+        margin-bottom: 48px;
+    }
+    
+    .container .content img {
+        width: 40%;
+    }
+    
+    .container .content p {
+        margin-top: 24px;
+        color: var(--desc);
+        font-size: 16px;
+        width: 70%;
+    }
+    .container .content a {
+        color: white;
+        padding: 14px 20px;
+        border-radius: 10px;
+        margin-top: 24px;
+        font-size: 14px;
+        background-color: var(--green);
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 100%;
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .container .content {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .container .content h2 {
+        color: var(--black);
+        width: 80%;
+        font-size: 20px;
+        margin-bottom: 48px;
+    }
+    
+    .container .content img {
+        width: 40%;
+    }
+    
+    .container .content p {
+        margin-top: 24px;
+        color: var(--desc);
+        font-size: 16px;
+        width: 70%;
+    }
+    .container .content a {
+        color: white;
+        padding: 14px 20px;
+        border-radius: 10px;
+        margin-top: 24px;
+        font-size: 14px;
+        background-color: var(--green);
+    }
+}

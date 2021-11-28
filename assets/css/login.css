@@ -1,0 +1,912 @@
+@import 'main.css';
+
+.container {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.container .container-popupChat {
+    position: fixed;
+    z-index: 99999;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 3em;
+    padding-left: 100px;
+    opacity: 0;
+    transition: .4s ease-in-out;
+}
+.container .container-popupChat.activeChatPopup{
+    opacity: 1;
+}
+
+.container .container-popupChat .iconMessage {
+    cursor: pointer;
+    background-color: var(--white);
+    box-shadow: 0px 100px 99px rgba(154, 154, 154, 0.07), 0px 41.7776px 41.3598px rgba(154, 154, 154, 0.0503198), 0px 22.3363px 22.1129px rgba(154, 154, 154, 0.0417275), 0px 12.5216px 12.3963px rgba(154, 154, 154, 0.035), 0px 6.6501px 
+    6.5836px rgba(154, 154, 154, 0.0282725), 0px 2.76726px 2.73958px rgba(154, 154, 154, 0.0196802);
+    border-radius: 100px;
+    display: flex;
+    width: 213px;
+    justify-content: center;
+    border: 1px solid var(--black);
+    align-content: center;
+    align-items: center;
+    padding: 8px 5px;
+}
+.container .container-popupChat .iconMessage img {
+    background-color: var(--green);
+    width: 2.7em;
+    border-radius: 8px 12px;
+    padding: 10px;
+    border: 1px solid var(--black);
+    border-radius: 100px;
+}
+.container .container-popupChat .iconMessage  p{
+    color: var(--black);
+    margin-left: 14px;
+}
+
+.container .container-popupChat .container-chat {
+    background-color: #071211;
+    width: 300px;
+    padding: 10px 18px 30px 18px;
+    border-radius: 15px;
+    bottom: -100%;
+    opacity: 0;
+    transition: .5s ease-in-out;
+    position: fixed;
+    margin-bottom: 2em;
+    z-index: 99999;
+}
+
+.container .container-popupChat .container-chat.activeChat {
+    bottom: 15%;
+    opacity: 1;
+}
+
+.container .container-popupChat .container-chat #iconCancelChat {
+    background-color: var(--white);
+    width: 2em;
+    padding: 4px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 100px;
+
+}
+.container .container-popupChat .container-chat .top {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container .container-popupChat .container-chat .top .wrapperImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+.container .container-popupChat .container-chat .top .wrapperImg img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.container .container-popupChat .container-chat .top p{
+    color: var(--white);
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+}
+.container .container-popupChat .container-chat .bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+.container .container-popupChat .container-chat .bottom input {
+    padding: 8px 14px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    width: 80%;
+}
+.container .container-popupChat .container-chat .bottom img {
+    background-color: var(--green);
+    cursor: pointer;
+    padding: 10px;
+    width: 40px;
+    border-radius: 10px;
+}
+
+
+
+.wrapper {
+    padding: 100px;
+}
+.wrapper::after {
+    content: url(../icon/arrowv2.svg);
+    position: absolute;
+    margin-top: 0.5em;
+    margin-left: 6em;
+}
+.wrapper .side1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 64%;
+}
+
+.wrapper .side1 .title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.wrapper .side1 .title h2 {
+    color:var(--black);
+    padding-bottom: 16px;
+}
+
+.wrapper .side1 .title h2::after {
+    content: url(../icon/arrow3.svg);
+    position: absolute;
+    margin-top: -1em;
+}
+
+.wrapper .side1 .title p {
+    font-size: 18px;
+    color: #6A6A6A; 
+    line-height: 165%;
+}
+.wrapper .side1 .title a {
+    color: var(--green);
+}
+
+
+.wrapper .side1 form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+}
+
+.wrapper .side1 form .form {
+    display: flex;
+    flex-direction: column;
+    margin-top:24px;
+}
+.wrapper .side1 form .form label {
+    font-size: 16px;
+    color: var(--black);
+    padding-bottom: 16px;
+}
+
+.wrapper .side1 form .form .input {
+    display: flex;
+    align-items: center;
+    position: relative; 
+    
+}
+
+
+.wrapper .side1 form .form .input .inputType {
+    border-radius: 10px;
+    outline: none;
+    padding: 16px 35px 16px 72px;
+    border: 1.5px solid #C6C6C6;
+    width: 100%;
+    font-size: 16px;
+    transition: all .2s ease-in-out;
+    color: #001618;
+}
+.wrapper .side1 form .form .input .inputType:focus {
+    border: 1.5px solid var(--black);
+    -webkit-box-shadow: 5px 6px 15px 2px rgba(31, 32, 32, 0.18); 
+    box-shadow: 5px 6px 15px 2px rgba(24, 27, 27, 0.18);
+}
+
+.wrapper .side1 form .form .input img {
+    position: absolute;
+    left: 0;
+    padding-left: 1.5em;
+    width: 3.3em;
+}
+
+
+
+.wrapper .side1 form .checkbox {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 35px;
+}
+.wrapper .side1 form .checkbox input {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.wrapper .side1 form .checkbox p {
+    font-size: 16px;
+    color: #6A6A6A;
+    padding-left: 30px;
+}
+
+
+.wrapper .side1 form button {
+    margin-top: 40px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+
+    background-color: var(--green);
+    padding: 17px 140px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.1s ease-in;
+}
+
+
+.wrapper .side1 form .btnSign {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+}
+.wrapper .side1 form .btnSign .sect1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper .side1 form .btnSign .sect1 .underline {
+    width: 220px;
+    height: 1px;
+    background-color: #C6C6C6;
+}
+
+
+.wrapper .side1 form .btnSign .sect2 {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+}
+.wrapper .side1 form .btnSign .sect2 .btn {
+    display: flex;
+    align-items: center;
+    border: 1px solid #C6C6C6;
+    padding: 17px 25px;
+    border-radius: 10px;
+}
+.wrapper .side1 form .btnSign .sect2 .btn a {
+    color:#001618;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.wrapper .side1 form .btnSign .sect2 .btn:nth-child(2) {
+    background-color: #3a8ddb;
+    outline: none;
+    border: none;
+}
+.wrapper .side1 form .btnSign .sect2 .btn:nth-child(2) a {
+    color: white;
+}
+
+
+@media (max-width: 576px) {
+    .container .container-popupChat {
+        position: fixed;
+        z-index: 200;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 3em;
+        padding-left: 16px;
+        opacity: 0;
+        z-index: 38;
+        transition: .4s ease-in-out;
+    }
+    .container .container-popupChat.activeChatPopup{
+        opacity: 1;
+    }
+    
+    .container .container-popupChat .iconMessage {
+        cursor: pointer;
+        background-color: var(--white);
+        box-shadow: 0px 100px 99px rgba(154, 154, 154, 0.07), 0px 41.7776px 41.3598px rgba(154, 154, 154, 0.0503198), 0px 22.3363px 22.1129px rgba(154, 154, 154, 0.0417275), 0px 12.5216px 12.3963px rgba(154, 154, 154, 0.035), 0px 6.6501px 
+        6.5836px rgba(154, 154, 154, 0.0282725), 0px 2.76726px 2.73958px rgba(154, 154, 154, 0.0196802);
+        border-radius: 100px;
+        display: flex;
+        width: 180px;
+        justify-content: center;
+        border: 1px solid var(--black);
+        align-content: center;
+        align-items: center;
+        padding: 8px 5px;
+    }
+    .container .container-popupChat .iconMessage img {
+        background-color: var(--green);
+        width: 2.2em;
+        border-radius: 8px 12px;
+        padding: 10px;
+        border: 1px solid var(--black);
+        border-radius: 100px;
+    }
+    .container .container-popupChat .iconMessage  p{
+        color: var(--black);
+        margin-left: 12px;
+        font-size: 14px;
+    }
+    
+    .container .container-popupChat .container-chat {
+        background-color: #071211;
+        width: 260px;
+        padding: 10px 14px 25px 14px;
+        border-radius: 15px;
+        bottom: -100%;
+        opacity: 0;
+        transition: .5s ease-in-out;
+        position: fixed;
+        margin-bottom: 2em;
+        z-index: 200;
+    }
+    
+    .container .container-popupChat .container-chat.activeChat {
+        bottom: 15%;
+        opacity: 1;
+    }
+    
+    .container .container-popupChat .container-chat #iconCancelChat {
+        background-color: var(--white);
+        width: 1.7em;
+        padding: 4px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 100px;
+    
+    }
+    .container .container-popupChat .container-chat .top {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .container .container-popupChat .container-chat .top .wrapperImg {
+        width: 40px;
+        height: 40px;
+        border-radius: 100px;
+        overflow: hidden;
+    }
+    .container .container-popupChat .container-chat .top .wrapperImg img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    .container .container-popupChat .container-chat .top p{
+        color: var(--white);
+        text-align: center;
+        margin-top: 16px;
+        font-size: 12px;
+    }
+    .container .container-popupChat .container-chat .bottom {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 32px;
+    }
+    .container .container-popupChat .container-chat .bottom input {
+        padding: 8px 14px;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+        width: 80%;
+        font-size: 12px;
+    }
+    .container .container-popupChat .container-chat .bottom img {
+        background-color: var(--green);
+        cursor: pointer;
+        padding: 10px;
+        width: 34px;
+        border-radius: 10px;
+    }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .wrapper {
+        margin-top: 80px;
+        padding: 0px;
+    }
+    .wrapper::after {
+        content: url(../icon/arrowv2.svg);
+        position: absolute;
+        margin-top: 0.5em;
+        margin-left: 6em;
+        display: none;
+    }
+    .wrapper .side1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    .wrapper .side1 .title {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .wrapper .side1 .title h2 {
+        color:var(--black);
+        padding-bottom: 16px;
+        font-size: 20px;
+        width: 100%;
+    }
+    
+    .wrapper .side1 .title h2::after {
+        content: url(../icon/arrow3.svg);
+        position: absolute;
+        margin-top: -1em;
+        width: 1em;
+        display: none;
+    }
+    
+    .wrapper .side1 .title p {
+        font-size: 16px;
+        color: #6A6A6A; 
+        line-height: 165%;
+    }
+    .wrapper .side1 .title a {
+        color: var(--green);
+    }
+    
+    
+    .wrapper .side1 form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 24px;
+    }
+    
+    .wrapper .side1 form .form {
+        display: flex;
+        flex-direction: column;
+        margin-top:24px;
+    }
+    .wrapper .side1 form .form label {
+        font-size: 16px;
+        color: var(--black);
+        padding-bottom: 16px;
+    }
+    
+    .wrapper .side1 form .form .input {
+        display: flex;
+        align-items: center;
+        position: relative; 
+        
+    }
+    
+    
+    .wrapper .side1 form .form .input .inputType {
+        border-radius: 10px;
+        outline: none;
+        padding: 12px 24px 12px 72px;
+        border: 1.5px solid #C6C6C6;
+        width: 100%;
+        font-size: 16px;
+        transition: all .2s ease-in-out;
+        color: #001618;
+    }
+    .wrapper .side1 form .form .input .inputType:focus {
+        border: 1.5px solid var(--black);
+        -webkit-box-shadow: 5px 6px 15px 2px rgba(31, 32, 32, 0.18); 
+        box-shadow: 5px 6px 15px 2px rgba(24, 27, 27, 0.18);
+    }
+    
+    .wrapper .side1 form .form .input img {
+        position: absolute;
+        left: 0;
+        padding-left: 1.5em;
+        width: 3em;
+    }
+    
+    
+    
+    .wrapper .side1 form .checkbox {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 35px;
+    }
+    .wrapper .side1 form .checkbox input {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+    .wrapper .side1 form .checkbox p {
+        font-size: 16px;
+        color: #6A6A6A;
+        padding-left: 30px;
+    }
+    
+    
+    .wrapper .side1 form button {
+        margin-top: 32px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background-color: var(--green);
+        padding: 14px 140px;
+        font-size: 16px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: all 0.1s ease-in;
+    }
+    
+    
+    .wrapper .side1 form .btnSign {
+        display: flex;
+        flex-direction: column;
+        padding-top: 24px;
+    }
+    .wrapper .side1 form .btnSign .sect1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .wrapper .side1 form .btnSign .sect1 p {
+        font-size: 14px;
+        color: var(--desc);
+    }
+    .wrapper .side1 form .btnSign .sect1 .underline {
+        width: 140px;
+        height: 1px;
+        background-color: #C6C6C6;
+    }
+    
+    
+    .wrapper .side1 form .btnSign .sect2 {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 25px;
+        flex-direction: column;
+    }
+    .wrapper .side1 form .btnSign .sect2 .btn {
+        display: flex;
+        align-items: center;
+        border: 1px solid #C6C6C6;
+        padding: 17px 25px;
+        border-radius: 10px;
+        margin-bottom: 16px;
+    }
+    .wrapper .side1 form .btnSign .sect2 .btn a {
+        color:#001618;
+        font-size: 16px;
+        text-decoration: none;
+        margin-left: 30px;
+    }
+    
+    .wrapper .side1 form .btnSign .sect2 .btn:nth-child(2) {
+        background-color: #3a8ddb;
+        outline: none;
+        border: none;
+    }
+    .wrapper .side1 form .btnSign .sect2 .btn:nth-child(2) a {
+        color: white;
+    }
+    
+
+    
+}
+
+@media (max-width: 992px) {
+    .container .container-popupChat {
+        position: fixed;
+        z-index: 200;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 3em;
+        padding-left: 16px;
+        opacity: 0;
+        z-index: 38;
+        transition: .4s ease-in-out;
+    }
+    .container .container-popupChat.activeChatPopup{
+        opacity: 1;
+    }
+    
+    .container .container-popupChat .iconMessage {
+        cursor: pointer;
+        background-color: var(--white);
+        box-shadow: 0px 100px 99px rgba(154, 154, 154, 0.07), 0px 41.7776px 41.3598px rgba(154, 154, 154, 0.0503198), 0px 22.3363px 22.1129px rgba(154, 154, 154, 0.0417275), 0px 12.5216px 12.3963px rgba(154, 154, 154, 0.035), 0px 6.6501px 
+        6.5836px rgba(154, 154, 154, 0.0282725), 0px 2.76726px 2.73958px rgba(154, 154, 154, 0.0196802);
+        border-radius: 100px;
+        display: flex;
+        width: 180px;
+        justify-content: center;
+        border: 1px solid var(--black);
+        align-content: center;
+        align-items: center;
+        padding: 8px 5px;
+    }
+    .container .container-popupChat .iconMessage img {
+        background-color: var(--green);
+        width: 2.2em;
+        border-radius: 8px 12px;
+        padding: 10px;
+        border: 1px solid var(--black);
+        border-radius: 100px;
+    }
+    .container .container-popupChat .iconMessage  p{
+        color: var(--black);
+        margin-left: 12px;
+        font-size: 14px;
+    }
+    
+    .container .container-popupChat .container-chat {
+        background-color: #071211;
+        width: 260px;
+        padding: 10px 14px 25px 14px;
+        border-radius: 15px;
+        bottom: -100%;
+        opacity: 0;
+        transition: .5s ease-in-out;
+        position: fixed;
+        margin-bottom: 2em;
+        z-index: 200;
+    }
+    
+    .container .container-popupChat .container-chat.activeChat {
+        bottom: 15%;
+        opacity: 1;
+    }
+    
+    .container .container-popupChat .container-chat #iconCancelChat {
+        background-color: var(--white);
+        width: 1.7em;
+        padding: 4px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 100px;
+    
+    }
+    .container .container-popupChat .container-chat .top {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .container .container-popupChat .container-chat .top .wrapperImg {
+        width: 40px;
+        height: 40px;
+        border-radius: 100px;
+        overflow: hidden;
+    }
+    .container .container-popupChat .container-chat .top .wrapperImg img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    .container .container-popupChat .container-chat .top p{
+        color: var(--white);
+        text-align: center;
+        margin-top: 16px;
+        font-size: 12px;
+    }
+    .container .container-popupChat .container-chat .bottom {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 32px;
+    }
+    .container .container-popupChat .container-chat .bottom input {
+        padding: 8px 14px;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+        width: 80%;
+        font-size: 12px;
+    }
+    .container .container-popupChat .container-chat .bottom img {
+        background-color: var(--green);
+        cursor: pointer;
+        padding: 10px;
+        width: 34px;
+        border-radius: 10px;
+    }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .wrapper {
+        margin-top: 80px;
+        padding: 0px;
+    }
+    .wrapper::after {
+        content: url(../icon/arrowv2.svg);
+        position: absolute;
+        margin-top: 0.5em;
+        margin-left: 6em;
+        display: none;
+    }
+    .wrapper .side1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    .wrapper .side1 .title {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .wrapper .side1 .title h2 {
+        color:var(--black);
+        padding-bottom: 16px;
+        font-size: 20px;
+        width: 100%;
+    }
+    
+    .wrapper .side1 .title h2::after {
+        content: url(../icon/arrow3.svg);
+        position: absolute;
+        margin-top: -1em;
+        width: 1em;
+        display: none;
+    }
+    
+    .wrapper .side1 .title p {
+        font-size: 16px;
+        color: #6A6A6A; 
+        line-height: 165%;
+    }
+    .wrapper .side1 .title a {
+        color: var(--green);
+    }
+    
+    
+    .wrapper .side1 form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 24px;
+    }
+    
+    .wrapper .side1 form .form {
+        display: flex;
+        flex-direction: column;
+        margin-top:24px;
+    }
+    .wrapper .side1 form .form label {
+        font-size: 16px;
+        color: var(--black);
+        padding-bottom: 16px;
+    }
+    
+    .wrapper .side1 form .form .input {
+        display: flex;
+        align-items: center;
+        position: relative; 
+        
+    }
+    
+    
+    .wrapper .side1 form .form .input .inputType {
+        border-radius: 10px;
+        outline: none;
+        padding: 12px 24px 12px 72px;
+        border: 1.5px solid #C6C6C6;
+        width: 100%;
+        font-size: 16px;
+        transition: all .2s ease-in-out;
+        color: #001618;
+    }
+    .wrapper .side1 form .form .input .inputType:focus {
+        border: 1.5px solid var(--black);
+        -webkit-box-shadow: 5px 6px 15px 2px rgba(31, 32, 32, 0.18); 
+        box-shadow: 5px 6px 15px 2px rgba(24, 27, 27, 0.18);
+    }
+    
+    .wrapper .side1 form .form .input img {
+        position: absolute;
+        left: 0;
+        padding-left: 1.5em;
+        width: 3em;
+    }
+    
+    
+    
+    .wrapper .side1 form .checkbox {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 35px;
+    }
+    .wrapper .side1 form .checkbox input {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+    .wrapper .side1 form .checkbox p {
+        font-size: 16px;
+        color: #6A6A6A;
+        padding-left: 30px;
+    }
+    
+    
+    .wrapper .side1 form button {
+        margin-top: 32px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background-color: var(--green);
+        padding: 14px 140px;
+        font-size: 16px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: all 0.1s ease-in;
+    }
+    
+    
+    .wrapper .side1 form .btnSign {
+        display: flex;
+        flex-direction: column;
+        padding-top: 24px;
+    }
+    .wrapper .side1 form .btnSign .sect1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .wrapper .side1 form .btnSign .sect1 p {
+        font-size: 14px;
+        color: var(--desc);
+    }
+    .wrapper .side1 form .btnSign .sect1 .underline {
+        width: 140px;
+        height: 1px;
+        background-color: #C6C6C6;
+    }
+    
+    
+    .wrapper .side1 form .btnSign .sect2 {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 25px;
+        flex-direction: column;
+    }
+    .wrapper .side1 form .btnSign .sect2 .btn {
+        display: flex;
+        align-items: center;
+        border: 1px solid #C6C6C6;
+        padding: 17px 25px;
+        border-radius: 10px;
+        margin-bottom: 16px;
+    }
+    .wrapper .side1 form .btnSign .sect2 .btn a {
+        color:#001618;
+        font-size: 16px;
+        text-decoration: none;
+        margin-left: 30px;
+    }
+    
+    .wrapper .side1 form .btnSign .sect2 .btn:nth-child(2) {
+        background-color: #3a8ddb;
+        outline: none;
+        border: none;
+    }
+    .wrapper .side1 form .btnSign .sect2 .btn:nth-child(2) a {
+        color: white;
+    }
+    
+
+    
+}
